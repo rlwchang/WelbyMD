@@ -1,0 +1,19 @@
+/*
+Theme Name: WelbyMD
+Version: 1.0.0
+Author: Richard Chang
+Description: WelbyMD Theme
+*/
+@import "normalize.css";
+@import "./base/_vendor";
+@import "./base/_variables";
+@import "./base/_mixins";
+@import "./base/_layout";
+@import "./base/_global";
+@import "./base/_wp-classes";
+@import "./modules/_navbar";
+@import "./modules/_main-content";
+@import "./modules/_footer";
+@import "./modules/_icon";
+@import "./modules/_step";
+@import "./modules/_headline";

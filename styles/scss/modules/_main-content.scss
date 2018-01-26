@@ -1,0 +1,10 @@
+.main-content {
+  padding-top: 30px;
+  flex-grow: 1;
+
+  @include atSmall {
+    border-top: 1px solid $mainBorderColor;
+    margin-top: -1px;
+    background-color: $mainBackgroundColor;
+  }
+}

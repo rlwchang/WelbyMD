@@ -1,0 +1,14 @@
+.footer {
+  background-color: $secondaryBackgroundColor;
+  // position: absolute;
+  // bottom: 0;
+  width: 100%;
+
+  &__copyright {
+    padding-bottom: 0.5rem;
+  }
+
+  &__navbar {
+    padding-top: 0.5rem; 
+  }
+}

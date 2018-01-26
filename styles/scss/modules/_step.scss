@@ -1,0 +1,43 @@
+.step {
+  border-radius: 10px;
+  border: 2px solid black;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+
+  @include atLarge {
+    max-width: 400px;
+  };
+
+  &__label {
+    font-size: 1.7rem;
+    padding: 0.5rem;
+    display: inline-block;
+    position: relative;
+    bottom: 1.35rem;
+    left: 1rem;
+    background-color: $mainBackgroundColor;
+
+    @include atMedium {
+      font-size: 1.3rem;
+      bottom: 1.15rem;
+    };
+
+    @include atLarge {
+      font-size: 1.7rem;
+      bottom: 1.35rem;
+    };
+  }
+
+  &__content {
+
+    @include atSmall {
+      font-size: 1.1rem;
+    };
+
+    @include atMedium {
+      font-size: 1rem;
+    };
+  }
+}

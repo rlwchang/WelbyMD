@@ -1,0 +1,257 @@
+.row {
+    @include clearfix;
+
+    &--gutters {
+        margin-right: -45px;
+    }
+
+    &--gutters--large {
+        margin-right: -60px;
+    }
+
+    &--gutters--small {
+        margin-right: -30px;
+    }
+
+    &--gutters > div {
+        padding-right: 45px;
+    }
+
+    &--gutters--large > div {
+        padding-right: 60px;
+    }
+
+    &--gutters--small > div {
+        padding-right: 30px;
+    }
+
+.flexbox &--equal-height-at-large {
+    @include atLarge {
+        display: flex;
+    }
+
+    & > div {
+        float: none;
+        display: flex;
+    }
+}
+
+.flexbox &--equal-height-at-medium {
+    @include atMedium {
+        display: flex;
+    }
+
+    & > div {
+        float: none;
+        display: flex;
+    }
+}
+}
+
+.col {
+  @for $i from 1 through 12 {
+    &--xs-#{$i} {
+      float: left;
+      width: ((100%/12) * $i);
+    }
+
+    // &--xs-#{$i}--larger {
+    //   width: ((100%/12) * $i + 3.33%);
+    // }
+    //
+    //
+    // &--xs-#{$i}--smaller {
+    //   width: ((100%/12) * $i - 3.33%);
+    // }
+  }
+
+  @include atSmall {
+    @for $i from 1 through 12 {
+      &--sm-#{$i} {
+        float: left;
+        width: ((100%/12) * $i);
+      }
+
+      // &--sm-#{$i}--larger {
+      //   width: ((100%/12) * $i + 3.33%);
+      // }
+      //
+      //
+      // &--sm-#{$i}--smaller {
+      //   width: ((100%/12) * $i - 3.33%);
+      // }
+    }
+  }
+
+  @include atMedium {
+    @for $i from 1 through 12 {
+      &--md-#{$i} {
+        float: left;
+        width: ((100%/12) * $i);
+      }
+
+      // &--md-#{$i}--larger {
+      //   width: ((100%/12) * $i + 3.33%);
+      // }
+      //
+      //
+      // &--md-#{$i}--smaller {
+      //   width: ((100%/12) * $i - 3.33%);
+      // }
+    }
+  }
+
+  @include atLarge {
+    @for $i from 1 through 12 {
+      &--lg-#{$i} {
+        float: left;
+        width: ((100%/12) * $i);
+      }
+
+      // &--lg-#{$i}--larger {
+      //   width: ((100%/12) * $i + 3.33%);
+      // }
+      //
+      //
+      // &--lg-#{$i}--smaller {
+      //   width: ((100%/12) * $i - 3.33%);
+      // }
+    }
+  }
+
+  @include atXLarge {
+    @for $i from 1 through 12 {
+      &--xl-#{$i} {
+        float: left;
+        width: ((100%/12) * $i);
+      }
+
+      // &--xl-#{$i}--larger {
+      //   width: ((100%/12) * $i + 3.33%);
+      // }
+      //
+      //
+      // &--xl-#{$i}--smaller {
+      //   width: ((100%/12) * $i - 3.33%);
+      // }
+    }
+  }
+}
+
+.container {
+  padding-top: 1rem;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include atMedium {
+    width: 90%;
+  };
+}
+
+.float {
+  &--right--sm {
+    @include atSmall {
+      float: right;
+    }
+  }
+
+  &--right--md {
+    @include atMedium {
+      float: right;
+    }
+  }
+  &--right--lg {
+    @include atLarge {
+      float: right;
+    }
+  }
+  &--right--xl {
+    @include atXLarge {
+      float: right;
+    }
+  }
+}
+
+// .rtl {
+//   &--sm {
+//     @include atSmall {
+//       direction: rtl;
+//     }
+//   }
+//
+//   &--md {
+//     @include atMedium {
+//       direction: rtl;
+//     }
+//   }
+//   &--lg {
+//     @include atLarge {
+//       direction: rtl;
+//     }
+//   }
+//   &--xl {
+//     @include atXLarge {
+//       direction: rtl;
+//     }
+//   }
+// }
+//
+// .ltr {
+//   &--sm {
+//     @include atSmall {
+//       direction: ltr;
+//     }
+//   }
+//
+//   &--md {
+//     @include atMedium {
+//       direction: ltr;
+//     }
+//   }
+//   &--lg {
+//     @include atLarge {
+//       direction: ltr;
+//     }
+//   }
+//   &--xl {
+//     @include atXLarge {
+//       direction: rtl;
+//     }
+//   }
+// }
+
+.center {
+  margin-left: 0;
+  margin-right: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &--horizontal {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  &--vertical {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &--text {
+    text-align: center;
+  }
+}
+
+$directions: (top right bottom left);
+
+@each $direction in $directions {
+  .no-padding--#{$direction} {
+    padding-#{$direction}: 0;
+  }
+
+  .no-margin--#{$direction} {
+    margin-#{$direction}: 0;
+  }
+}
