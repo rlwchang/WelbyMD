@@ -1,0 +1,26 @@
+// Based on the default Wordpress Menu class
+.menu {
+    padding-left: 0;
+    margin: 0;
+}
+
+.menu-item {
+  list-style-type: none;
+  font-size: 1rem;
+  text-align: center;
+
+
+  @include atSmall {
+    text-align: left;
+
+  };
+
+  &:hover {
+    background-color: $mainGray;
+    font-weight: 700;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

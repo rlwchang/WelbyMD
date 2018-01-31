@@ -25,6 +25,7 @@
         padding-right: 30px;
     }
 
+
 .flexbox &--equal-height-at-large {
     @include atLarge {
         display: flex;
@@ -38,6 +39,17 @@
 
 .flexbox &--equal-height-at-medium {
     @include atMedium {
+        display: flex;
+    }
+
+    & > div {
+        float: none;
+        display: flex;
+    }
+}
+
+.flexbox &--equal-height-at-small {
+    @include atSmall {
         display: flex;
     }
 
@@ -222,15 +234,17 @@
 // }
 
 .center {
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 
   &--horizontal {
-    margin-left: 0;
-    margin-right: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   &--vertical {

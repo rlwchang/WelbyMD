@@ -1,11 +1,35 @@
 .icon {
-  display: inline-block;  
-  background-color: black;
-  height: 50px;
-  width: 50px;
+  display: inline-block;
+  // background-color: black;
+  text-align: center;
+
+  &__tray {
+    display: block;
+    text-align: center;
+
+
+    @include atSmall {
+      text-align: left;
+    }
+  }
+
+  &--social {
+    color: $mainTextColor;
+
+    &:hover {
+      color: lighten($mainTextColor, 20%);
+    }
+  }
 
   &--small {
+    font-size: 1.5rem;
     height: 25px;
     width: 25px;
+  }
+
+  &--medium {
+    font-size: 3rem;
+    height: 50px;
+    width: 50px;
   }
 }

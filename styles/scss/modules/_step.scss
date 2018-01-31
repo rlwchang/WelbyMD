@@ -6,9 +6,38 @@
   padding-right: 1rem;
   width: 100%;
 
+  @include atMedium {
+    margin-bottom: 0;
+  };
+
   @include atLarge {
     max-width: 400px;
   };
+
+  &--red {
+    color: $mainRed;
+    border-color: $mainRed;
+  }
+  &--blue {
+    color: $mainBlue;
+    border-color: $mainBlue;
+  }
+  &--green {
+    color: $secondaryGreen;
+    border-color: $secondaryGreen;
+  }
+  &--yellow {
+    color: $mainYellow;
+    border-color: $mainYellow;
+  }
+  &--purple {
+    color: $mainPurple;
+    border-color: $mainPurple;
+  }
+
+  &__container {
+    margin-bottom: 1rem;
+  }
 
   &__label {
     font-size: 1.7rem;

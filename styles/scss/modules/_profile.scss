@@ -1,0 +1,26 @@
+.profile {
+
+  &__image {
+    margin-bottom: 1rem;
+
+    &--index {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include atSmall {
+        display: inline-block;
+      };
+    }
+
+    &--show {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include atMedium {
+        display: inline-block;
+      };
+    }
+  }
+}

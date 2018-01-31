@@ -1,3 +1,4 @@
-import test from "./test"
+import Navbar from "./Navbar";
 
-test('this is a test');
+
+var navbar = new Navbar(jQuery);

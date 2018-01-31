@@ -1,0 +1,15 @@
+.service {
+  border-width: 1px 0px 0px 0px;
+  border-style: solid;
+  border-color: $mainBorderColor;
+  padding: 1.5rem;
+  padding-top: 2.5rem;
+
+  &:first-of-type {
+    border-top: 0px solid $mainBorderColor;
+  }
+
+  &:last-of-type {
+    border-bottom: 1px solid $mainBorderColor;
+  }
+}

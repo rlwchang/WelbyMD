@@ -1,6 +1,10 @@
 .headline {
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 300;
+
+  &--x-large {
+    font-size: 2.5rem;
+  }
 
   &--large {
     font-size: 2rem;
@@ -12,5 +16,26 @@
 
   &--bold {
     font-weight: 700;
+  }
+
+  &--normal {
+    font-weight: 300;
+  }
+
+  &--thin {
+    font-weight: 100;
+  }
+
+  &--underline {
+    display: inline-block;
+    border-bottom: 1px solid $mainBlack;
+  }
+
+  &--italic {
+    font-style: italic;
+  }
+
+  &--small-margin {
+    margin: 1rem 0;
   }
 }

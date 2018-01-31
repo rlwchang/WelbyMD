@@ -1,8 +1,10 @@
 .main-content {
   padding-top: 30px;
+  padding-bottom: 30px;
   flex-grow: 1;
+  margin-top: 4rem;
 
-  @include atSmall {
+  @include atMedium {
     border-top: 1px solid $mainBorderColor;
     margin-top: -1px;
     background-color: $mainBackgroundColor;

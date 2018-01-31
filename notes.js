@@ -19,11 +19,25 @@ Wordpress Functions
   + Methods
     - have_posts()
     - the_post()
+    - is_main_query()
+    - set({option key}, {option value}) -
 
   + Query Options
-    - 'posts_per_page' => {int}
+    - 'posts_per_page' => {int} - -1 means give all posts
     - 'post_type' => {option_type || e.g. 'page' or 'post'}
     - 'category_name' => {category}
+    - 'meta_key' => {name of custom field}
+    - 'meta_query' => array({options}) - Returns results if the given options array is true for all parameters.
+    - 'orderby' => {option || e.g. 'post_date'(default),'title', 'rand', 'meta_value', or 'meta_value_num'} - Meta value is done based on meta key
+    - 'order' => {'DESC' of 'ASC'}
+
+    + Meta Query Options
+      - array (
+        'key' => {comparison key},
+        'compare' => {comparison operator},
+        'value' => {compared value},
+        'type' => {value type || e.g. numeric}
+      )
 
 + Posts Functions
   - bloginfo({parameter}) - Echoes site information based on parameter
@@ -33,16 +47,21 @@ Wordpress Functions
   - the_content()
   - the_author()
   - the_excerpt()
+  - the_post_thumbnail({nickname}) - Takes an optional nickname to use custom image sizes
   - the_time({date_format}) - Echoes out the time that a post was created in the given format
   - the_author_posts_link() - Echoes a link to all posts by the author
   - get_the_category_list() - Returns a list of all the categories of the post
   - paginate_links() - Echoes out pagination links
+  - has_excerpt()
+  - get_post_type()
 
 + Archive Functions
   - the_archive_title()
   - the_archive_description()
   - is_category()
   - single_cat_title({prefix}) - Echoes cateogry title prefixed by the specified string
+  - get_post_type_archive_link({post type})
+  - is_post_type_archive({post type})
 
 
 + Bloginfo Parameters
@@ -89,12 +108,19 @@ Wordpress Functions
   - wp_enqueue_script({script_name}, {file_location}, {list_of_dependencies}, {version_number}, {bool in_footer})
   - wp_enqueue_style({stylesheet_name}, {file_location}, {list_of_dependencies}, {version_number}, {media type})
   - add_theme_support({feature_name || e.g. 'title_tag'}, {function_name})
+  - add_image_size({image size nickname}, {pixels wide}, {pixels tall}, {bool crop OR options array with options})
   - register_post_type({post_name}, {options_array}) - Best to put in 'app/public/mu_plugins'
   - add_action({wp_hook}, {function_name})
 
+  + Image Size Options
+    - What sides to use as the center for cropping
+
   + Post Type Options
+    - 'supports' => array({options ||e.g. 'title', 'editor', 'excerpt', 'custom-fields'})
+    - 'has_archive' => {bool} - Enable archiving. Defaults to false.
     - 'public' => true
     - 'labels' => array()
+    - 'rewrite' => array('slug' => {text}) - Rewrite the permalink slug
     - 'menu_icon' => {wordpress_dashicon}
 
     + Labels Options
@@ -112,6 +138,10 @@ Wordpress Functions
   - 'init' - Use to register post types
   - 'after_setup_theme' - Right after functions.php is read. First action hook available to themes.
   - 'wp_enqueue_scripts' - When scripts and styles are to be enqueued.
+  - 'pre_get_posts' - Best time to adjust the default query. The callback will be given a $query parameter.
 
 + Misc
   - wp_trim_words({string}, {number_of_words})
+  - the_field({field name}) - Use with plugin Advanced Custom Fields. Echoes out value for given field.
+  - get_field({field name}) - Use with plugin Advanced Custom Fields. Echoes out value for given field.
+  - is_admin() - Useful when modifying queries

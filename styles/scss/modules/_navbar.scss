@@ -1,13 +1,97 @@
 .navbar {
-  font-family: "Raleway", "Helvetica", sans-serif;
+  position: fixed;
+  z-index: 1;
+  background-color: $mainBackgroundColor;
+  width: 100%;
+  padding: 0.5rem 5% 0 5%;
+  border-bottom: 1px solid $mainBorderColor;
+
+  @include atMedium {
+    display: block;
+    position: static;
+    background-color: transparent;
+    border-bottom: none;
+    width: 90%;
+    padding-left: 0;
+    padding-right: 0;
+  };
+
+  &__menu-icon {
+    display: inline-block;
+    width: 30px;
+    height: 29px;
+    position: relative;
+    float: right;
+    // right: 25px;
+    top: 0.5rem;
+    z-index: 10;
+
+    @include atMedium {
+      display: none;
+    };
+
+    &__middle {
+        width: 30px;
+        height: 3px;
+        background-color: $mainTextColor;
+        position: absolute;
+        top: 13px;
+        left: 0;
+        transition: transform 0.3s ease-out;
+        transform-origin: 50%;
+    }
+
+    &::before {
+        content: "";
+        width: 30px;
+        height: 3px;
+        background-color: $mainTextColor;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform-origin: 0 0;
+        transition: 0.3s ease-out;
+    }
+
+    &::after {
+        content: "";
+        width: 30px;
+        height: 3px;
+        background-color: $mainTextColor;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform-origin: 0 100%;
+        transition: transform 0.3s ease-out;
+
+    }
+    &--close-x {
+      &::before {
+        transform: rotate(45deg) scaleX(1.25);
+      }
+
+      .navbar__menu-icon__middle {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      &::after {
+        transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+      }
+    }
+  }
 
   &__brand {
-    font-weight: 100;
+    font-family: "Raleway", "Helvetica", sans-serif;
+    font-weight: 200;
     font-size: 2.5rem;
+    padding-bottom: 0.5rem;
 
 
     @include atMedium {
       font-size: 2.7rem;
+      padding-bottom: 0;
+      border-bottom: none;
     };
 
     @include atLarge {
@@ -15,14 +99,17 @@
     };
 
     &--blue {
+      font-family: inherit;
       color: $mainBlue;
     }
 
     &--green {
+      font-family: inherit;
       color: $mainGreen;
     }
 
     &--black {
+      font-family: inherit;
       color: $mainBlack;
     }
 
@@ -31,26 +118,51 @@
     }
   }
 
+  &__container {
+    height: 0;
+    transition: height 0.3s ease-out;
+    transform-origin: top;
+
+    &--visible {
+      height: auto;
+    }
+
+    @include atMedium {
+      height: auto;
+    };
+  }
   // Wordpress Classes
   .menu {
     font-size: 0;
+    transform: scaleY(0);
+    transition: transform 0.1s ease-out;
+    transform-origin: top;
 
-    ul {
-      padding: 0;
 
-      @include atMedium {
-        padding-left: 40px;
-      };
+    &--visible {
+      display: block;
+      transform: scaleY(1);
     }
+
+    @include atMedium {
+      padding-left: 40px;
+      display: block;
+      transform: scaleY(1);
+    };
   }
 
-  .page_item {
+  .menu-item {
     list-style-type: none;
     font-size: 1rem;
-    display: inline-block;
+    border-top: 1px solid $mainBorderColor;
+    border-left: 1px solid $mainBorderColor;
+    border-right: 1px solid $mainBorderColor;
+
     padding: 0.5rem;
 
     @include atMedium {
+      border: none;
+      display: inline-block;
       padding: 1rem;
     };
 
@@ -70,10 +182,13 @@
   }
 
   .current_page_item {
-    border-top: 3px solid $mainGreen;
-    border-left: 1px solid $mainBorderColor;
-    border-right: 1px solid $mainBorderColor;
     background-color: $mainBackgroundColor;
-  }
+    border-left: 3px solid $mainGreen;
 
+    @include atMedium {
+      border-top: 3px solid $mainGreen;
+      border-left: 1px solid $mainBorderColor;
+      border-right: 1px solid $mainBorderColor;
+    };
+  }
 }

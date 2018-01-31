@@ -1,0 +1,30 @@
+.text {
+
+  &--underline {
+    text-decoration: underline;
+  }
+
+  &--italic {
+    font-style: italic;
+  }
+
+  &--bold {
+    font-weight: 700;
+  }
+
+  &--thin {
+    font-weight: 100;
+  }
+
+  &--large {
+    font-size: 2rem;
+  }
+
+  &--medium {
+    font-size: 1.5rem;
+  }
+
+  &--small {
+    font-size: 1.3rem;
+  }
+}
