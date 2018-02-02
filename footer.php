@@ -5,14 +5,14 @@
       <div class="col--sm-4">
         <h3 class="footer__headline headline--small-margin">Connect</h3>
         <div class="icon__tray">
-          <a href="#">
+          <!-- <a href="#">
             <i class="icon--social fa fa-facebook icon icon--small"></i>
-          </a>
-          <a href="#">
+          </a> -->
+          <a href="https://twitter.com/@andrew_welbymd">
             <i class="icon--social fa fa-twitter icon icon--small"></i>
           </a>
-          <a href="#">
-            <i class="icon--social fa fa-linkedin icon icon--small"></i>
+          <a href="https://www.instagram.com/welbymd/">
+            <i class="icon--social fa fa-instagram icon icon--small"></i>
           </a>
         </div>
       </div>
