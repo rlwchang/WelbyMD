@@ -57,3 +57,14 @@ typings/
 # dotenv environment variables file
 .env
 
+# Ignore everything in repository root
+/*
+
+# Files to not ignore
+!/.gitignore
+
+# Folder to not ignore
+!/mu-plugins/
+!/themes/
+/themes/*
+!/themes/welby-md-rchang
