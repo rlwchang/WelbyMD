@@ -4,6 +4,8 @@
   "description": "Getting second opinions from radiology experts",
   "main": "index.js",
   "dependencies": {
+    "jquery": "^3.3.1",
+    "jquery-smooth-scroll": "^2.2.0",
     "normalize.css": "^7.0.0"
   },
   "devDependencies": {

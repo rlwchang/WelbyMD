@@ -2,7 +2,8 @@ class Navbar {
     constructor($) {
         this.menuIcon = $(".navbar__menu-icon");
         this.menu = $(".menu");
-        this.container = $(".navbar__container")
+        this.menuItems = $(".menu-item");
+        this.container = $(".navbar__container");
         this.events();
     }
 

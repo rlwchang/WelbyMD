@@ -12,4 +12,27 @@
   &:last-of-type {
     border-bottom: 1px solid $mainBorderColor;
   }
+
+  &__generic-text {
+    @include atMedium {
+      font-size: 1.2rem;
+    };
+  }
+
+  &__iframe {
+    height: 0px;
+    width: 100%;
+    border: none;
+    border-top: 1px solid $mainBorderColor;
+    transition: height 0.3s ease-out;
+
+    &--active {
+      height: 1150px;
+      border-bottom: 1px solid $mainBorderColor;
+
+      @include atMedium {
+        height: 900px;
+      };
+    }
+  }
 }
