@@ -1,6 +1,5 @@
 <?php get_header() ?>
 
-<?php get_template_part('./partials/content', 'headline') ?>
 
   <div class="row service">
     <div class="col--md-4 center--text">

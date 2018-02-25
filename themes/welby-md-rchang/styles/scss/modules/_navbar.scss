@@ -3,18 +3,36 @@
   z-index: 1;
   background-color: $mainBackgroundColor;
   width: 100%;
-  padding: 0.5rem 5% 0 5%;
   border-bottom: 1px solid $mainBorderColor;
+  padding-top: 0.5rem;
+  top: 0;
+  // left: 0;
+  // right: 0;
+  // margin-left: auto;
+  // margin-right: auto;
+
 
   @include atMedium {
     display: block;
-    position: static;
+    position: absolute;
+    // position: fixed;
     background-color: transparent;
+    // background-color: $mainGreen;
     border-bottom: none;
-    width: 90%;
     padding-left: 0;
     padding-right: 0;
   };
+
+  &__menu-container {
+    max-height: 0;
+    transition: max-height 0.3s ease-in;
+    overflow: hidden;
+
+    &--visible {
+      padding-bottom: 1rem;
+      max-height: 100vh;
+    }
+  }
 
   &__menu-icon {
     display: inline-block;
@@ -117,32 +135,15 @@
       font-weight: 400;
     }
   }
-
-  &__container {
-    height: 0;
-    transition: height 0.3s ease-out;
-    transform-origin: top;
-
-    &--visible {
-      height: auto;
-    }
-
-    @include atMedium {
-      height: auto;
-    };
-  }
   // Wordpress Classes
   .menu {
     font-size: 0;
-    transform: scaleY(0);
-    transition: transform 0.1s ease-out;
-    transform-origin: top;
+    display: block;
 
-
-    &--visible {
-      display: block;
-      transform: scaleY(1);
-    }
+    @include atMedium {
+      bottom: 0;
+      position: absolute;
+    };
 
     @include atMedium {
       padding-left: 40px;
@@ -154,41 +155,47 @@
   .menu-item {
     list-style-type: none;
     font-size: 1rem;
+    padding: 0.5rem;
     border-top: 1px solid $mainBorderColor;
     border-left: 1px solid $mainBorderColor;
     border-right: 1px solid $mainBorderColor;
 
-    padding: 0.5rem;
+    &--bottom-border {
+      border-bottom: 1px solid $mainBorderColor;
+    }
 
     @include atMedium {
       border: none;
       display: inline-block;
-      padding: 1rem;
+      padding: 0.5rem 1rem;
     };
 
     @include atLarge {
       font-size: 1.2rem;
-      padding: 1.2rem;
+      padding: 0.5rem 1.2rem;
     };
-
-    &:hover {
-      background-color: $mainGray;
-      font-weight: 700;
-    }
 
     a {
       text-decoration: none;
     }
+
+    &:hover {
+
+      @include atMedium {
+        font-size: 1.3rem;
+      };
+    }
   }
 
   .current_page_item {
-    background-color: $mainBackgroundColor;
+    // background-color: $mainBackgroundColor;
     border-left: 3px solid $mainGreen;
 
     @include atMedium {
-      border-top: 3px solid $mainGreen;
-      border-left: 1px solid $mainBorderColor;
-      border-right: 1px solid $mainBorderColor;
+      border-bottom: 3px solid $mainGreen;
+      border-left: none;
+      // border-left: 1px solid $mainBorderColor;
+      // border-right: 1px solid $mainBorderColor;
     };
   }
 }

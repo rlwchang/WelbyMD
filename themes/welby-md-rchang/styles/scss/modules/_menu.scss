@@ -16,7 +16,8 @@
   };
 
   &:hover {
-    background-color: $mainGray;
+    // background-color: $mainGray;
+    // color: lighten($mainTextColor, 20%);
     font-weight: 700;
   }
 

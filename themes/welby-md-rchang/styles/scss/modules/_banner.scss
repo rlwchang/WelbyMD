@@ -1,0 +1,32 @@
+.banner {
+  position: relative;
+  padding-top: 60px;
+  min-height: 200px;
+
+  &--no-subtitle {
+    min-height: 150px;
+  }
+
+  &__text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &--no-image {
+      padding-top: 6rem;
+    }
+  }
+
+  &__image {
+    margin-top: -60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.5;
+    height: 250px;
+
+    &--front {
+      height: 600px;
+    }
+  }
+}

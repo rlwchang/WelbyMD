@@ -9,9 +9,8 @@ function loadProfileImageWithFallback($size, $type) {
   } else { ?>
     <img src="<?php echo get_theme_file_uri('images/blank-profile-' . $sizesArray[$size] . '.png') ?>" alt="<?php the_title()?>" class="profile__image profile__image--<?php echo $type ?>">
   <?php }
-}  ?>
+}
 
-<?php
 function link_styles_and_scripts() {
   wp_enqueue_style('mainStyles', get_theme_file_uri('./style.css'));
   wp_enqueue_script('webpackManifest', get_theme_file_uri('./scripts/manifest.js'), array(), '1.0', true);
@@ -30,9 +29,8 @@ function theme_features() {
   add_theme_support('post-thumbnails');
   add_image_size('small-profile', 150, 200, TRUE);
   add_image_size('medium-profile', 250, 350, TRUE);
+  add_image_size('page-banner', 1500, 350, TRUE);
 }
 
 add_action('after_setup_theme', 'theme_features');
-
-
- ?>
+?>

@@ -10411,7 +10411,7 @@ var Navbar = function () {
         this.menuIcon = $(".navbar__menu-icon");
         this.menu = $(".menu");
         this.menuItems = $(".menu-item");
-        this.container = $(".navbar__container");
+        this.container = $(".navbar__menu-container");
         this.events();
     }
 
@@ -10425,7 +10425,7 @@ var Navbar = function () {
         value: function toggleMenu() {
             this.menuIcon.toggleClass("navbar__menu-icon--close-x");
             this.menu.toggleClass("menu--visible");
-            this.container.toggleClass("navbar__container--visible");
+            this.container.toggleClass("navbar__menu-container--visible");
         }
     }]);
 

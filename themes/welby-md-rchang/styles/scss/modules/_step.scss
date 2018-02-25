@@ -10,10 +10,6 @@
     margin-bottom: 0;
   };
 
-  @include atLarge {
-    max-width: 400px;
-  };
-
   &--red {
     color: $mainRed;
     border-color: $mainRed;
