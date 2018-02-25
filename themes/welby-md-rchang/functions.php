@@ -30,7 +30,7 @@ function theme_features() {
   add_image_size('small-profile', 150, 200, TRUE);
   add_image_size('medium-profile', 250, 350, TRUE);
   add_image_size('page-banner', 1500, 350, TRUE);
-  add_image_size('page-banner-tall' 1500, 600, TRUE);
+  add_image_size('page-banner-tall', 1500, 600, TRUE);
 }
 
 add_action('after_setup_theme', 'theme_features');
