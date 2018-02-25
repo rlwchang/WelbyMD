@@ -15,7 +15,7 @@
         <div class="banner">
           <div class="banner__image banner__image--front" style="background-image: url(<?php
             $bannerImageArray = get_field('background_image');
-            echo $bannerImageArray['sizes']['page-banner'];
+            echo $bannerImageArray['sizes']['page-banner-tall'];
            ?>);">
           </div>
           <div class="container banner__text">
