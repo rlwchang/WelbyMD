@@ -5,6 +5,7 @@
     the_post(); ?>
     <?php the_content() ?>
   <?php } ?>
+  <div class="row">
   <?php
     $doctorsQueryOptions = array(
       'posts_per_page' => -1,
