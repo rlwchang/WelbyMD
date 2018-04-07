@@ -1,29 +1,33 @@
 .row {
     @include clearfix;
 
-    &--gutters {
+    @include atSmall {
+      &--gutters {
         margin-right: -45px;
-    }
+      }
 
-    &--gutters--large {
+      &--gutters--large {
         margin-right: -60px;
-    }
+      }
 
-    &--gutters--small {
+      &--gutters--small {
         margin-right: -30px;
-    }
+      }
 
-    &--gutters > div {
+      &--gutters > div {
         padding-right: 45px;
-    }
+      }
 
-    &--gutters--large > div {
+      &--gutters--large > div {
         padding-right: 60px;
-    }
+      }
 
-    &--gutters--small > div {
+      &--gutters--small > div {
         padding-right: 30px;
-    }
+      }
+
+    };
+
 
 
 .flexbox &--equal-height-at-large {

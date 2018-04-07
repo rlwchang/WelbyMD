@@ -18,12 +18,7 @@
             echo $bannerImageArray['sizes']['page-banner-tall'];
            ?>);">
           </div>
-          <div class="container banner__text">
-            <h2 class="headline--large headline--thin center--text">THIS IS YOUR BODY. DON'T LEAVE IT TO CHANCE!</h2>
-            <p class="text--medium">Save yourself from unnecessary and costly surgeries, procedures, therapies and medications—and open up a host of options you never even considered</p>
-            <a href="<?php echo site_url('/services') ?>" class="btn btn--blue btn--generic center--horizontal center--text">Get A Second Opinion!</a>
-          </div>
-        </div>
+          
     <?php }
      ?>
      <div class="row navbar">

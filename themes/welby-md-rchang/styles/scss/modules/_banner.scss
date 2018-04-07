@@ -6,11 +6,23 @@
   &--no-subtitle {
     min-height: 150px;
   }
+  //
+  &--home {
+    position: absolute;
+    width: 100%;
+    top: 50vh;
+    transform: translateY(-50%);
+    height: 100vh
+  }
 
   &__text {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+
+    // &--home {
+    //   position: relative;
+    // }
 
     &--no-image {
       padding-top: 6rem;
