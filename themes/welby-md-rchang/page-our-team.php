@@ -1,8 +1,10 @@
 <?php get_header() ?>
 
 <div class="container">
-  <h2 class="headline--large headline--thin headline--underline">Doctors</h2>
-  <div class="row">
+  <?php while (have_posts()) {
+    the_post(); ?>
+    <?php the_content() ?>
+  <?php } ?>
   <?php
     $doctorsQueryOptions = array(
       'posts_per_page' => -1,
