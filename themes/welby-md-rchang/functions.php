@@ -34,4 +34,7 @@ function theme_features() {
 }
 
 add_action('after_setup_theme', 'theme_features');
+
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
 ?>

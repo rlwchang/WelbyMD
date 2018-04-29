@@ -10467,13 +10467,17 @@ var ServiceFrame = function () {
     this.btnRadStd = (0, _jquery2.default)("#btn-rad-std");
     this.btnRadStdUrl = this.btnRadStd.attr("data-link");
     this.btnRadExp = (0, _jquery2.default)("#btn-rad-exp");
-    this.btnRadExpUrl = this.btnRadStd.attr("data-link");
+    this.btnRadExpUrl = this.btnRadExp.attr("data-link");
     this.btnOrthStd = (0, _jquery2.default)("#btn-orth-std");
-    this.btnOrthStdUrl = this.btnRadStd.attr("data-link");
+    this.btnOrthStdUrl = this.btnOrthStd.attr("data-link");
     this.btnOrthExp = (0, _jquery2.default)("#btn-orth-exp");
-    this.btnOrthExpUrl = this.btnRadStd.attr("data-link");
+    this.btnOrthExpUrl = this.btnOrthExp.attr("data-link");
     this.events();
     this.addSmoothScroll();
+    // console.log(this.btnRadStd);
+    // console.log(this.btnRadExp);
+    // console.log(this.btnOrthStd);
+    // console.log(this.btnOrthExp);
   }
 
   _createClass(ServiceFrame, [{
@@ -10497,6 +10501,7 @@ var ServiceFrame = function () {
   }, {
     key: "onServiceClick",
     value: function onServiceClick(url) {
+      // console.log(`Button was clicked with url: ${url}`)
       this.frame.attr("src", url);
       this.frame.addClass("service__iframe--active");
     }

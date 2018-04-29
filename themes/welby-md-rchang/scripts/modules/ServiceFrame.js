@@ -14,6 +14,10 @@ class ServiceFrame {
     this.btnOrthExpUrl = this.btnOrthExp.attr("data-link");
     this.events();
     this.addSmoothScroll();
+    // console.log(this.btnRadStd);
+    // console.log(this.btnRadExp);
+    // console.log(this.btnOrthStd);
+    // console.log(this.btnOrthExp);
   }
 
   events() {
@@ -24,6 +28,7 @@ class ServiceFrame {
   }
 
   onServiceClick(url) {
+    // console.log(`Button was clicked with url: ${url}`)
     this.frame.attr("src", url);
     this.frame.addClass("service__iframe--active");
   }
